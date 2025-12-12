@@ -2,19 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://xm5hrf76o781" path="res://scences/peter.tscn" id="1_85lop"]
 [ext_resource type="PackedScene" uid="uid://b608f4iik6h65" path="res://scences/background.tscn" id="1_nh0wq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn5so"]
-size = Vector2(22.25, 20.625)
+[ext_resource type="PackedScene" uid="uid://cecrpqtdwx0m6" path="res://scences/golem.tscn" id="3_vn5so"]
 
 [node name="lvl1" type="Node2D"]
-position = Vector2(221, 566)
 
 [node name="Background" parent="." instance=ExtResource("1_nh0wq")]
-position = Vector2(-239, -596)
+position = Vector2(-9, -95)
 
 [node name="Peter" parent="." instance=ExtResource("1_85lop")]
-position = Vector2(-194, -592)
+position = Vector2(165, 32)
+scale = Vector2(0.778534, 0.647866)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Peter"]
-position = Vector2(570.875, 335.313)
-shape = SubResource("RectangleShape2D_vn5so")
+[node name="Golem" parent="." instance=ExtResource("3_vn5so")]
+position = Vector2(915, 181)
+scale = Vector2(0.586932, 0.572885)

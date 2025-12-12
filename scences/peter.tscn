@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://xm5hrf76o781"]
+[gd_scene load_steps=7 format=3 uid="uid://xm5hrf76o781"]
 
 [ext_resource type="Script" uid="uid://diut6c2c4rjeh" path="res://scences/peter.gd" id="1_tj1y4"]
 [ext_resource type="Texture2D" uid="uid://dylmue07b0cbn" path="res://Resources/IMG/Assasin.png" id="2_tj1y4"]
@@ -25,6 +25,10 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tj1y4"]
+radius = 14.9841
+height = 42.1685
+
 [node name="Peter" type="CharacterBody2D"]
 script = ExtResource("1_tj1y4")
 
@@ -36,3 +40,8 @@ position = Vector2(577, 330)
 sprite_frames = SubResource("SpriteFrames_f5and")
 animation = &"idle"
 frame_progress = 0.41973
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(574, 342)
+rotation = -1.55641
+shape = SubResource("CapsuleShape2D_tj1y4")
