@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cprnttwh81c2g"]
+
+[ext_resource type="PackedScene" uid="uid://xm5hrf76o781" path="res://scences/peter.tscn" id="1_85lop"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gheg1"]
+size = Vector2(14, 652)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85lop"]
+size = Vector2(1140.5, 15)
+
+[node name="lvl1" type="Node2D"]
+position = Vector2(221, 566)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(929, -240)
+shape = SubResource("RectangleShape2D_gheg1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-220, -234)
+shape = SubResource("RectangleShape2D_gheg1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(353.75, 75.75)
+shape = SubResource("RectangleShape2D_85lop")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(355, -555)
+shape = SubResource("RectangleShape2D_85lop")
+
+[node name="Peter" parent="." instance=ExtResource("1_85lop")]
+position = Vector2(-205, -562)
