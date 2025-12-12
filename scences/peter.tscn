@@ -1,15 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://xm5hrf76o781"]
+[gd_scene load_steps=6 format=3 uid="uid://xm5hrf76o781"]
 
-[ext_resource type="Texture2D" uid="uid://cd5bb2v78qfxx" path="res://icon.svg" id="1_1gx4x"]
 [ext_resource type="Script" uid="uid://diut6c2c4rjeh" path="res://scences/peter.gd" id="1_tj1y4"]
+[ext_resource type="Texture2D" uid="uid://dylmue07b0cbn" path="res://Resources/IMG/Assasin.png" id="2_tj1y4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p15u"]
+atlas = ExtResource("2_tj1y4")
+region = Rect2(142, 0, 142, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj1y4"]
+atlas = ExtResource("2_tj1y4")
+region = Rect2(293, 0, 140, 189)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f5and"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p15u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj1y4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
 
 [node name="Peter" type="CharacterBody2D"]
 script = ExtResource("1_tj1y4")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(573, 322)
-scale = Vector2(0.40625, 0.429688)
-texture = ExtResource("1_1gx4x")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(573, 322)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(577, 330)
+sprite_frames = SubResource("SpriteFrames_f5and")
+animation = &"idle"
+frame_progress = 0.41973
