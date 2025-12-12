@@ -1,21 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://xm5hrf76o781"]
+[gd_scene load_steps=3 format=3 uid="uid://xm5hrf76o781"]
 
 [ext_resource type="Texture2D" uid="uid://cd5bb2v78qfxx" path="res://icon.svg" id="1_1gx4x"]
 [ext_resource type="Script" uid="uid://diut6c2c4rjeh" path="res://scences/peter.gd" id="1_tj1y4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tj1y4"]
-size = Vector2(50, 47)
-
 [node name="Peter" type="CharacterBody2D"]
 script = ExtResource("1_tj1y4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(321, 490)
-shape = SubResource("RectangleShape2D_tj1y4")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(321, 488.00006)
-scale = Vector2(0.40625, 0.4296875)
+position = Vector2(573, 322)
+scale = Vector2(0.40625, 0.429688)
 texture = ExtResource("1_1gx4x")
 
 [node name="Camera2D" type="Camera2D" parent="."]
