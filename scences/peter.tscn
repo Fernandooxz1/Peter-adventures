@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://xm5hrf76o781"]
+[gd_scene load_steps=12 format=3 uid="uid://xm5hrf76o781"]
 
 [ext_resource type="Script" uid="uid://diut6c2c4rjeh" path="res://scences/peter.gd" id="1_tj1y4"]
 [ext_resource type="Texture2D" uid="uid://dylmue07b0cbn" path="res://Resources/IMG/Assasin.png" id="2_tj1y4"]
@@ -28,18 +28,6 @@ atlas = ExtResource("2_tj1y4")
 region = Rect2(572, 379, 124, 151)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ohgl"]
-atlas = ExtResource("2_tj1y4")
-region = Rect2(708, 379, 124, 151)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oyuh8"]
-atlas = ExtResource("2_tj1y4")
-region = Rect2(28, 379, 124, 151)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8wtl7"]
-atlas = ExtResource("2_tj1y4")
-region = Rect2(164, 379, 124, 151)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wflbe"]
 atlas = ExtResource("2_tj1y4")
 region = Rect2(708, 379, 124, 151)
 
@@ -74,21 +62,30 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 10.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oyuh8")
+"texture": SubResource("AtlasTexture_6p15u")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8wtl7")
+"texture": SubResource("AtlasTexture_f5and")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wflbe")
+"texture": SubResource("AtlasTexture_bh0wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm80x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo36k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ohgl")
 }],
 "loop": true,
 "name": &"walk",
-"speed": 4.0
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tj1y4"]
@@ -109,7 +106,7 @@ position = Vector2(-1.999939, 3.0000305)
 scale = Vector2(0.6553398, 0.5567376)
 sprite_frames = SubResource("SpriteFrames_f5and")
 animation = &"walk"
-frame_progress = 0.12723722
+frame_progress = 0.56358546
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 13)
