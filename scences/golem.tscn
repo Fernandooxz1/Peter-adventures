@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://cecrpqtdwx0m6"]
+[gd_scene load_steps=25 format=3 uid="uid://cecrpqtdwx0m6"]
 
+[ext_resource type="Script" uid="uid://7lilurwcbojc" path="res://scences/golem.gd" id="1_2jm07"]
 [ext_resource type="Texture2D" uid="uid://d26t51tp6wki7" path="res://Resources/IMG/Golems.png" id="1_ionug"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2jm07"]
@@ -130,7 +131,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_tv4c2")
 }],
 "loop": true,
-"name": &"rolling",
+"name": &"roll",
 "speed": 12.0
 }, {
 "frames": [{
@@ -153,20 +154,46 @@ animations = [{
 "texture": SubResource("AtlasTexture_f242k")
 }],
 "loop": true,
-"name": &"walking",
+"name": &"walk",
 "speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gsk3h"]
 radius = 18.1108
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_r71x4"]
+radius = 167.01198
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fqfoa"]
+radius = 39.0
+
 [node name="Golem" type="CharacterBody2D"]
+script = ExtResource("1_2jm07")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.000004, 1)
+scale = Vector2(0.6805556, 0.75)
 sprite_frames = SubResource("SpriteFrames_1xbud")
-animation = &"rolling"
-frame_progress = 0.0639867
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-13, -3)
 shape = SubResource("CircleShape2D_gsk3h")
+
+[node name="AreaDetection" type="Area2D" parent="."]
+position = Vector2(46, -22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetection"]
+position = Vector2(-59, 20)
+shape = SubResource("CircleShape2D_r71x4")
+
+[node name="AreaAttack" type="Area2D" parent="."]
+position = Vector2(252, -31)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAttack"]
+shape = SubResource("CircleShape2D_fqfoa")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="AreaDetection" to="." method="_on_area_detection_body_entered"]
+[connection signal="body_exited" from="AreaDetection" to="." method="_on_area_detection_body_exited"]
+[connection signal="body_entered" from="AreaAttack" to="." method="_on_area_attack_body_entered"]
