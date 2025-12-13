@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkqs2n0umlkqf"
-path="res://.godot/imported/wooddefenses.webp-98c4e2a9bad5e24bfe6a6ba2a6136995.ctex"
+uid="uid://cy2iy17hmq1mg"
+path="res://.godot/imported/Slime.png-4c9d0b44467a08fffd4ae63d1d0210eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/IMG/wooddefenses.webp"
-dest_files=["res://.godot/imported/wooddefenses.webp-98c4e2a9bad5e24bfe6a6ba2a6136995.ctex"]
+source_file="res://Resources/IMG/Slime.png"
+dest_files=["res://.godot/imported/Slime.png-4c9d0b44467a08fffd4ae63d1d0210eb.ctex"]
 
 [params]
 

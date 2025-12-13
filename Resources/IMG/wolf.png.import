@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkqs2n0umlkqf"
-path="res://.godot/imported/wooddefenses.webp-98c4e2a9bad5e24bfe6a6ba2a6136995.ctex"
+uid="uid://ddblfsaucqsvx"
+path="res://.godot/imported/wolf.png-13bbdb5a3413ac0dc8b7a966b5bee9f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/IMG/wooddefenses.webp"
-dest_files=["res://.godot/imported/wooddefenses.webp-98c4e2a9bad5e24bfe6a6ba2a6136995.ctex"]
+source_file="res://Resources/IMG/wolf.png"
+dest_files=["res://.godot/imported/wolf.png-13bbdb5a3413ac0dc8b7a966b5bee9f9.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkqs2n0umlkqf"
-path="res://.godot/imported/wooddefenses.webp-98c4e2a9bad5e24bfe6a6ba2a6136995.ctex"
+uid="uid://bnvfcd37h6fmw"
+path="res://.godot/imported/Top-Down-Enemy-Pixel-Art-for-Defense4-720x480.png-63d30599904b441d96c1bcee0a2c4943.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/IMG/wooddefenses.webp"
-dest_files=["res://.godot/imported/wooddefenses.webp-98c4e2a9bad5e24bfe6a6ba2a6136995.ctex"]
+source_file="res://Resources/IMG/Top-Down-Enemy-Pixel-Art-for-Defense4-720x480.png"
+dest_files=["res://.godot/imported/Top-Down-Enemy-Pixel-Art-for-Defense4-720x480.png-63d30599904b441d96c1bcee0a2c4943.ctex"]
 
 [params]
 
