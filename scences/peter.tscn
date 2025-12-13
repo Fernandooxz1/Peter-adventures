@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://xm5hrf76o781"]
+[gd_scene load_steps=12 format=3 uid="uid://xm5hrf76o781"]
 
 [ext_resource type="Script" uid="uid://diut6c2c4rjeh" path="res://scences/peter.gd" id="1_tj1y4"]
 [ext_resource type="Texture2D" uid="uid://dylmue07b0cbn" path="res://Resources/IMG/Assasin.png" id="2_tj1y4"]
@@ -10,6 +10,26 @@ region = Rect2(142, 0, 142, 189)
 [sub_resource type="AtlasTexture" id="AtlasTexture_tj1y4"]
 atlas = ExtResource("2_tj1y4")
 region = Rect2(293, 0, 140, 189)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh0wq"]
+atlas = ExtResource("2_tj1y4")
+region = Rect2(295, 420, 103, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm80x"]
+atlas = ExtResource("2_tj1y4")
+region = Rect2(0, 423, 103, 141)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xo36k"]
+atlas = ExtResource("2_tj1y4")
+region = Rect2(146, 420, 103, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ohgl"]
+atlas = ExtResource("2_tj1y4")
+region = Rect2(449, 420, 103, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5and"]
+atlas = ExtResource("2_tj1y4")
+region = Rect2(606, 420, 103, 140)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f5and"]
 animations = [{
@@ -23,11 +43,48 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bh0wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm80x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo36k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bh0wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo36k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ohgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5and")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm80x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xo36k")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tj1y4"]
-radius = 14.9841
-height = 42.1685
+radius = 16.012726
+height = 32.02545
 
 [node name="Peter" type="CharacterBody2D"]
 motion_mode = 1
@@ -35,14 +92,16 @@ script = ExtResource("1_tj1y4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(573, 322)
+zoom = Vector2(1.3, 1.3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(577, 330)
+position = Vector2(559.25, 298.75)
+scale = Vector2(0.6553398, 0.5567376)
 sprite_frames = SubResource("SpriteFrames_f5and")
-animation = &"idle"
-frame_progress = 0.41973
+animation = &"walk"
+frame_progress = 0.8639443
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(574, 342)
+position = Vector2(562.00006, 301)
 rotation = -1.55641
 shape = SubResource("CapsuleShape2D_tj1y4")

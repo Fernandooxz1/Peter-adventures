@@ -1,21 +1,22 @@
 extends CharacterBody2D
 
-@export var speed = 200.0
-
-func _ready():
-	# Esto nos dirá si el script al menos se está ejecutando al inicio
-	print(">>> EL SCRIPT DE PETER ESTÁ ACTIVO <<<")
+@export var speed = 120.0
 
 func _physics_process(_delta):
-	var direction = Input.get_vector("left", "right", "up", "down")
+	var walk = Input.get_vector("left", "right", "up", "down")
+	var isRuning = Input.is_action_pressed("run")
 	
-	# Esto imprimirá la dirección en la consola inferior todo el tiempo
-	# Si presionas teclas y esto sigue diciendo (0, 0), el problema es el Mapa de Entrada
-	print("Dirección actual: ", direction)
-	
-	if direction:
-		velocity = direction * speed
+	if walk:
+		if isRuning:
+			velocity = walk * (speed * 1.5) 
+			$AnimatedSprite2D.play("run")
+		else:
+			velocity = walk * speed 
+			$AnimatedSprite2D.play("walk")
+		if walk.x != 0:
+			$AnimatedSprite2D.flip_h = walk.x > 0
 	else:
 		velocity = Vector2.ZERO
+		$AnimatedSprite2D.play("idle")
 
 	move_and_slide()

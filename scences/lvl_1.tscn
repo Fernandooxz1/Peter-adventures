@@ -1,6 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cprnttwh81c2g"]
+[gd_scene load_steps=8 format=3 uid="uid://cprnttwh81c2g"]
 
 [ext_resource type="PackedScene" uid="uid://xm5hrf76o781" path="res://scences/peter.tscn" id="1_85lop"]
+[ext_resource type="PackedScene" uid="uid://b608f4iik6h65" path="res://scences/background.tscn" id="1_nh0wq"]
+[ext_resource type="PackedScene" uid="uid://cecrpqtdwx0m6" path="res://scences/golem.tscn" id="2_vn5so"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85lop"]
 size = Vector2(1153, 27)
@@ -17,8 +19,14 @@ size = Vector2(20, 638)
 [node name="lvl1" type="Node2D"]
 position = Vector2(221, 566)
 
+[node name="Background" parent="." instance=ExtResource("1_nh0wq")]
+position = Vector2(-199, -665)
+
+[node name="Golem" parent="Background" instance=ExtResource("2_vn5so")]
+position = Vector2(257, 564)
+
 [node name="Peter" parent="." instance=ExtResource("1_85lop")]
-position = Vector2(-205, -562)
+position = Vector2(324, -493)
 
 [node name="wall1" type="StaticBody2D" parent="."]
 position = Vector2(314, -534)
