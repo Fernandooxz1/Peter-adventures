@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://b608f4iik6h65"]
+
+[ext_resource type="Texture2D" uid="uid://ci3ufpsu5ms1y" path="res://Resources/IMG/farm.webp" id="1_m8fpd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8fpd"]
+size = Vector2(547, 217)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04wlg"]
+size = Vector2(322, 427)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf651"]
+size = Vector2(529, 237.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrhv2"]
+size = Vector2(502.5, 179)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxfpl"]
+size = Vector2(202, 151)
+
+[node name="Background" type="Node2D"]
+
+[node name="fondo" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="fondo"]
+position = Vector2(574, 390.25)
+scale = Vector2(1.11719, 1.14129)
+texture = ExtResource("1_m8fpd")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="fondo"]
+position = Vector2(871, 650)
+shape = SubResource("RectangleShape2D_m8fpd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fondo"]
+position = Vector2(272.5, 109.5)
+shape = SubResource("RectangleShape2D_m8fpd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="fondo"]
+position = Vector2(430, 495.5)
+shape = SubResource("RectangleShape2D_04wlg")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="fondo"]
+position = Vector2(881.5, 124.25)
+shape = SubResource("RectangleShape2D_jf651")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="fondo"]
+position = Vector2(894.75, 396.5)
+shape = SubResource("RectangleShape2D_lrhv2")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="fondo"]
+position = Vector2(115, 649)
+shape = SubResource("RectangleShape2D_kxfpl")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="fondo"]
+position = Vector2(105, 230)
+shape = SubResource("RectangleShape2D_kxfpl")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="fondo"]
+position = Vector2(108, 440)
+shape = SubResource("RectangleShape2D_kxfpl")
