@@ -1,7 +1,19 @@
-[gd_scene load_steps=25 format=3 uid="uid://cecrpqtdwx0m6"]
+[gd_scene load_steps=28 format=3 uid="uid://cecrpqtdwx0m6"]
 
 [ext_resource type="Script" uid="uid://7lilurwcbojc" path="res://scences/golem.gd" id="1_2jm07"]
 [ext_resource type="Texture2D" uid="uid://d26t51tp6wki7" path="res://Resources/IMG/Golems.png" id="1_ionug"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xbud"]
+atlas = ExtResource("1_ionug")
+region = Rect2(0, 0, 133, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsk3h"]
+atlas = ExtResource("1_ionug")
+region = Rect2(144, 0, 133, 148)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfjb7"]
+atlas = ExtResource("1_ionug")
+region = Rect2(720, 0, 133, 148)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2jm07"]
 atlas = ExtResource("1_ionug")
@@ -77,6 +89,20 @@ region = Rect2(715, 374, 143, 187)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1xbud"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xbud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsk3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfjb7")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2jm07")
@@ -165,32 +191,37 @@ radius = 18.1108
 radius = 167.01198
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fqfoa"]
-radius = 39.0
+radius = 14.142136
 
 [node name="Golem" type="CharacterBody2D"]
+collision_layer = 4
 script = ExtResource("1_2jm07")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-4.000004, 1)
 scale = Vector2(0.6805556, 0.75)
 sprite_frames = SubResource("SpriteFrames_1xbud")
-animation = &"walk"
+animation = &"attack"
+frame_progress = 0.18348178
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-13, -3)
+position = Vector2(-3, 4)
 shape = SubResource("CircleShape2D_gsk3h")
 
 [node name="AreaDetection" type="Area2D" parent="."]
-position = Vector2(46, -22)
+position = Vector2(-3, 4)
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetection"]
-position = Vector2(-59, 20)
+position = Vector2(-2, 0)
 shape = SubResource("CircleShape2D_r71x4")
 
 [node name="AreaAttack" type="Area2D" parent="."]
-position = Vector2(252, -31)
+position = Vector2(-2, 2)
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAttack"]
+position = Vector2(-3, 5)
 shape = SubResource("CircleShape2D_fqfoa")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

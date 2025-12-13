@@ -56,4 +56,4 @@ func _on_area_detection_body_exited(body):
 func _on_area_attack_body_entered(body):
 	if body == player and current_state != State.ATTACK:
 		current_state = State.ATTACK
-		sprite.play("roll")	
+		sprite.play("attack")	

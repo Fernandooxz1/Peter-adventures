@@ -74,7 +74,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 15.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -88,7 +88,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tj1y4"]
@@ -96,6 +96,7 @@ radius = 16.012726
 height = 32.02545
 
 [node name="Peter" type="CharacterBody2D"]
+collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_tj1y4")
 
@@ -107,10 +108,10 @@ zoom = Vector2(1.3, 1.3)
 position = Vector2(-1.999939, 3.0000305)
 scale = Vector2(0.6553398, 0.5567376)
 sprite_frames = SubResource("SpriteFrames_f5and")
-animation = &"idle"
-frame_progress = 0.22491413
+animation = &"walk"
+frame_progress = 0.12723722
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 4)
+position = Vector2(-1, 13)
 rotation = -1.55641
 shape = SubResource("CapsuleShape2D_tj1y4")
