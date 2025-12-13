@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l1ep2bh0obhr"
-path="res://.godot/imported/inhouse.webp-6fd8ecfde7f2ab86f981a1a85a4f85f6.ctex"
+uid="uid://54s0vhosfv65"
+path="res://.godot/imported/Plantita.png-b75ab44f464e5aefee7bc11962f9b22d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/IMG/inhouse.webp"
-dest_files=["res://.godot/imported/inhouse.webp-6fd8ecfde7f2ab86f981a1a85a4f85f6.ctex"]
+source_file="res://Resources/IMG/Plantita.png"
+dest_files=["res://.godot/imported/Plantita.png-b75ab44f464e5aefee7bc11962f9b22d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l1ep2bh0obhr"
-path="res://.godot/imported/inhouse.webp-6fd8ecfde7f2ab86f981a1a85a4f85f6.ctex"
+uid="uid://bv7dp68qik4ax"
+path="res://.godot/imported/caballoman.png-c5d9fb97c52398bd6b99e711ee480e3f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/IMG/inhouse.webp"
-dest_files=["res://.godot/imported/inhouse.webp-6fd8ecfde7f2ab86f981a1a85a4f85f6.ctex"]
+source_file="res://Resources/IMG/caballoman.png"
+dest_files=["res://.godot/imported/caballoman.png-c5d9fb97c52398bd6b99e711ee480e3f.ctex"]
 
 [params]
 

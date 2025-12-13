@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l1ep2bh0obhr"
-path="res://.godot/imported/inhouse.webp-6fd8ecfde7f2ab86f981a1a85a4f85f6.ctex"
+uid="uid://bjt1ckc86yayi"
+path="res://.godot/imported/Mago.png-eb75f281c08e328fe3b2a843e42d27b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/IMG/inhouse.webp"
-dest_files=["res://.godot/imported/inhouse.webp-6fd8ecfde7f2ab86f981a1a85a4f85f6.ctex"]
+source_file="res://Resources/IMG/Mago.png"
+dest_files=["res://.godot/imported/Mago.png-eb75f281c08e328fe3b2a843e42d27b7.ctex"]
 
 [params]
 
