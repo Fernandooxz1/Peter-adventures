@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b608f4iik6h65"]
+[gd_scene load_steps=11 format=3 uid="uid://b608f4iik6h65"]
 
 [ext_resource type="Texture2D" uid="uid://ci3ufpsu5ms1y" path="res://Resources/IMG/farm.webp" id="1_m8fpd"]
 
@@ -16,6 +16,18 @@ size = Vector2(502.5, 179)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxfpl"]
 size = Vector2(202, 151)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nit5k"]
+size = Vector2(1153, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvkr8"]
+size = Vector2(1147.5, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc8t2"]
+size = Vector2(13, 659)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcm01"]
+size = Vector2(20, 638)
 
 [node name="Background" type="Node2D"]
 
@@ -57,3 +69,35 @@ shape = SubResource("RectangleShape2D_kxfpl")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="fondo"]
 position = Vector2(108, 440)
 shape = SubResource("RectangleShape2D_kxfpl")
+
+[node name="wall1" type="StaticBody2D" parent="."]
+position = Vector2(514, 97.99999)
+scale = Vector2(0.9953841, 1.1022243)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1"]
+position = Vector2(53.245773, -88.00385)
+shape = SubResource("RectangleShape2D_nit5k")
+
+[node name="wall2" type="StaticBody2D" parent="."]
+position = Vector2(211, 599)
+scale = Vector2(0.9953841, 1.1022243)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
+position = Vector2(364.29626, 160.32654)
+shape = SubResource("RectangleShape2D_rvkr8")
+
+[node name="wall3" type="StaticBody2D" parent="."]
+position = Vector2(1097, 383)
+scale = Vector2(0.9953841, 1.1022243)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
+position = Vector2(54.055664, 13)
+shape = SubResource("RectangleShape2D_hc8t2")
+
+[node name="wall4" type="StaticBody2D" parent="."]
+position = Vector2(3.999999, 421)
+scale = Vector2(0.9953841, 1.1022243)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall4"]
+position = Vector2(0, -21.741974)
+shape = SubResource("RectangleShape2D_pcm01")

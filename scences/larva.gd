@@ -20,7 +20,7 @@ func _physics_process(_delta):
 			if player:
 				var direction = (player.global_position - global_position).normalized()
 				velocity = direction * speed
-				sprite.play("roll")
+				sprite.play("walk")
 				
 				if direction.x != 0:
 					sprite.flip_h = direction.x > 0

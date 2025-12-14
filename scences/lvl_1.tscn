@@ -3,54 +3,38 @@
 [ext_resource type="PackedScene" uid="uid://xm5hrf76o781" path="res://scences/peter.tscn" id="1_85lop"]
 [ext_resource type="PackedScene" uid="uid://b608f4iik6h65" path="res://scences/background.tscn" id="1_nh0wq"]
 [ext_resource type="PackedScene" uid="uid://cecrpqtdwx0m6" path="res://scences/golem.tscn" id="2_vn5so"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_85lop"]
-size = Vector2(1153, 27)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nh0wq"]
-size = Vector2(1147.5, 21)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn5so"]
-size = Vector2(13, 659)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ha8bf"]
-size = Vector2(20, 638)
+[ext_resource type="PackedScene" uid="uid://c45oeqdnialea" path="res://scences/larva.tscn" id="3_4r13e"]
+[ext_resource type="PackedScene" uid="uid://csj3jkpu5227r" path="res://scences/lizard.tscn" id="5_4r13e"]
+[ext_resource type="PackedScene" uid="uid://dfho0uaec0bhd" path="res://scences/slime.tscn" id="5_16gry"]
+[ext_resource type="PackedScene" uid="uid://crqyhggis6adk" path="res://scences/wolf.tscn" id="7_p8n5b"]
 
 [node name="lvl1" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_nh0wq")]
 position = Vector2(-199, -665)
 
-[node name="Golem" parent="Background" instance=ExtResource("2_vn5so")]
-position = Vector2(257, 564)
-
 [node name="Peter" parent="." instance=ExtResource("1_85lop")]
 position = Vector2(383, -455)
 
-[node name="wall1" type="StaticBody2D" parent="."]
-position = Vector2(314, -534)
+[node name="Golem" parent="." instance=ExtResource("2_vn5so")]
+position = Vector2(58, -101)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1"]
-position = Vector2(48, -27)
-shape = SubResource("RectangleShape2D_85lop")
+[node name="larva" parent="." instance=ExtResource("3_4r13e")]
+position = Vector2(822, -151)
+scale = Vector2(0.43823746, 0.5106977)
+collision_layer = 4
 
-[node name="wall2" type="StaticBody2D" parent="."]
-position = Vector2(11, -33)
+[node name="slime" parent="." instance=ExtResource("5_16gry")]
+position = Vector2(875, -395.99997)
+scale = Vector2(0.41411042, 0.42937854)
+collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
-position = Vector2(354.25, 119.5)
-shape = SubResource("RectangleShape2D_nh0wq")
+[node name="lizard" parent="." instance=ExtResource("5_4r13e")]
+position = Vector2(-142, -332)
+scale = Vector2(0.66055983, 0.66184545)
+collision_layer = 4
 
-[node name="wall3" type="StaticBody2D" parent="."]
-position = Vector2(897, -249)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
-position = Vector2(42, 13)
-shape = SubResource("RectangleShape2D_vn5so")
-
-[node name="wall4" type="StaticBody2D" parent="."]
-position = Vector2(-196, -211)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall4"]
-position = Vector2(0, -29)
-shape = SubResource("RectangleShape2D_ha8bf")
+[node name="wolf" parent="." instance=ExtResource("7_p8n5b")]
+position = Vector2(423, -152)
+scale = Vector2(0.7366126, 0.77238154)
+collision_layer = 4
