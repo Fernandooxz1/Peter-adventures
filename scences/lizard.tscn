@@ -1,6 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://csj3jkpu5227r"]
+[gd_scene load_steps=27 format=3 uid="uid://csj3jkpu5227r"]
 
 [ext_resource type="Texture2D" uid="uid://cdukjpm6c5b8s" path="res://Resources/IMG/lizard.png" id="1_7tbmf"]
+[ext_resource type="Script" uid="uid://c0o157vrdjxdb" path="res://scences/lizard.gd" id="1_fl4tw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fl4tw"]
 atlas = ExtResource("1_7tbmf")
@@ -104,7 +105,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_o3wnj")
 }],
 "loop": true,
-"name": &"bite",
+"name": &"attack",
 "speed": 10.0
 }, {
 "frames": [{
@@ -167,21 +168,47 @@ animations = [{
 "texture": SubResource("AtlasTexture_mwuy6")
 }],
 "loop": true,
-"name": &"run",
+"name": &"walk",
 "speed": 15.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7tbmf"]
 height = 50.023
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7tbmf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fl4tw"]
+
 [node name="lizard" type="CharacterBody2D"]
+script = ExtResource("1_fl4tw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_icftf")
-animation = &"idle"
-frame_progress = 0.451148
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 rotation = -1.56975
 shape = SubResource("CapsuleShape2D_7tbmf")
+
+[node name="AreaDetection" type="Area2D" parent="."]
+scale = Vector2(0.84927535, 0.8779343)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetection"]
+scale = Vector2(28.466785, 26.171892)
+shape = SubResource("CircleShape2D_7tbmf")
+
+[node name="AreaAttack" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAttack"]
+scale = Vector2(4.8133154, 2.848542)
+shape = SubResource("CircleShape2D_fl4tw")
+
+[connection signal="body_entered" from="AreaDetection" to="." method="_on_area_detection_body_entered"]
+[connection signal="body_exited" from="AreaDetection" to="." method="_on_area_detection_body_exited"]
+[connection signal="body_entered" from="AreaAttack" to="." method="_on_area_attack_body_entered"]
+[connection signal="body_exited" from="AreaAttack" to="." method="_on_area_attack_body_exited"]

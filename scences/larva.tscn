@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://c45oeqdnialea"]
+[gd_scene load_steps=31 format=3 uid="uid://c45oeqdnialea"]
 
 [ext_resource type="Texture2D" uid="uid://bg40qpc6hi86k" path="res://Resources/IMG/larva.png" id="1_bbp80"]
+[ext_resource type="Script" uid="uid://blfbclhmv5ck4" path="res://scences/larva.gd" id="1_e6n3y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6n3y"]
 atlas = ExtResource("1_bbp80")
@@ -120,7 +121,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_jouaw")
 }],
 "loop": true,
-"name": &"bite",
+"name": &"attack",
 "speed": 8.0
 }, {
 "frames": [{
@@ -219,21 +220,50 @@ animations = [{
 "texture": SubResource("AtlasTexture_hns88")
 }],
 "loop": true,
-"name": &"move",
+"name": &"walk",
 "speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bbp80"]
 height = 44.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_bbp80"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e6n3y"]
+
 [node name="larva" type="CharacterBody2D"]
+script = ExtResource("1_e6n3y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vh7wl")
-animation = &"idle"
-frame_progress = 0.568855
+animation = &"attack"
+frame_progress = 0.39055085
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 6)
 rotation = -1.57713
 shape = SubResource("CapsuleShape2D_bbp80")
+
+[node name="AreaDetection" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDetection"]
+position = Vector2(5.9604645e-08, 2)
+scale = Vector2(35.32514, 32.63663)
+shape = SubResource("CircleShape2D_bbp80")
+
+[node name="AreaAttack" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAttack"]
+position = Vector2(0, 4)
+scale = Vector2(4.5078263, 3.5310383)
+shape = SubResource("CircleShape2D_e6n3y")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="AreaDetection" to="." method="_on_area_detection_body_entered"]
+[connection signal="body_exited" from="AreaDetection" to="." method="_on_area_detection_body_exited"]
+[connection signal="body_entered" from="AreaAttack" to="." method="_on_area_attack_body_entered"]
+[connection signal="body_exited" from="AreaAttack" to="." method="_on_area_attack_body_exited"]
