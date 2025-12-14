@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dijmh6pqng3rg"
-path="res://.godot/imported/Orco.png-768530292626cbcdeb002ea564676e89.ctex"
+uid="uid://bty8bs50fxvxb"
+path="res://.godot/imported/woodDoors.png-2de552f24688c7b97b53532fb91f659c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/IMG/Orco.png"
-dest_files=["res://.godot/imported/Orco.png-768530292626cbcdeb002ea564676e89.ctex"]
+source_file="res://Resources/IMG/woodDoors.png"
+dest_files=["res://.godot/imported/woodDoors.png-2de552f24688c7b97b53532fb91f659c.ctex"]
 
 [params]
 

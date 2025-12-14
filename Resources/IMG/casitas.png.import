@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dijmh6pqng3rg"
-path="res://.godot/imported/Orco.png-768530292626cbcdeb002ea564676e89.ctex"
+uid="uid://cbgyj1bokil37"
+path="res://.godot/imported/casitas.png-761de183c1c132d4354cd52e27c6aaf5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/IMG/Orco.png"
-dest_files=["res://.godot/imported/Orco.png-768530292626cbcdeb002ea564676e89.ctex"]
+source_file="res://Resources/IMG/casitas.png"
+dest_files=["res://.godot/imported/casitas.png-761de183c1c132d4354cd52e27c6aaf5.ctex"]
 
 [params]
 
